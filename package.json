@@ -1,0 +1,16 @@
+{
+  "name": "variant-blogpost-service",
+  "version": "1.0.0",
+  "description": "Wrapper around Medium API for getting 4 latest posts.",
+  "main": "server.js",
+  "scripts": {
+    "start": "micro"
+  },
+  "keywords": [],
+  "author": "Mikael Brevik <mb@variant.as>",
+  "license": "ISC",
+  "dependencies": {
+    "micro": "^9.3.3",
+    "node-fetch": "^2.2.0"
+  }
+}
