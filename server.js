@@ -1,10 +1,13 @@
 const fetch = require('node-fetch');
 const limit = 4;
 
-module.exports = async () => {
+module.exports = async (_, res) => {
+  // Allow all to get latest posts.
+  res.setHeader('Access-Control-Allow-Origin', '*');
+
   try {
     const request = await fetch(
-      `https://medium.com/@variant_as/latest?format=json&limit=${limit}`
+      `https://medium.com/variant-as/latest?format=json&limit=${limit}`
     );
     const dataText = await request.text();
     const data = dataText.replace('])}while(1);</x>', '');
