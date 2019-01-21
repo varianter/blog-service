@@ -14,7 +14,7 @@ async function getData() {
     const data = dataText.replace("])}while(1);</x>", "");
     const parsed = JSON.parse(data);
 
-    if (!parsed.success) {
+    if (parsed.success === false) {
       return parsed;
     }
 
