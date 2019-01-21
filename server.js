@@ -14,13 +14,16 @@ async function getData() {
     const data = dataText.replace("])}while(1);</x>", "");
     const parsed = JSON.parse(data);
 
-    if (parsed.success === false) {
+    if (!parsed.success) {
       return parsed;
     }
 
-    return parsed.payload.posts
-      .filter(p => !hasTag(p, "variantdag") && !hasTag(p, "results"))
-      .slice(0, limit);
+    return {
+      success: true,
+      posts: parsed.payload.posts
+        .filter(p => !hasTag(p, "variantdag") && !hasTag(p, "results"))
+        .slice(0, limit)
+    };
   } catch (e) {
     console.error(e);
     return {
