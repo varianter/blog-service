@@ -10,7 +10,9 @@
   "author": "Mikael Brevik <mb@variant.as>",
   "license": "ISC",
   "dependencies": {
-    "micro": "^9.3.3",
     "node-fetch": "^2.2.0"
+  },
+  "devDependencies": {
+    "micro": "^9.3.3"
   }
 }
